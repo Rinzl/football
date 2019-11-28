@@ -1,8 +1,7 @@
 package vn.dangth.module.entity;
 
-public class TKTPDoiBong {
+public class TKTPDoiBong extends DoiBong {
 
-    private DoiBong doiBong;
     private int soTheVang;
     private int soTheDo;
     private int soLoi;
@@ -10,19 +9,10 @@ public class TKTPDoiBong {
     public TKTPDoiBong() {
     }
 
-    public TKTPDoiBong(DoiBong doiBong, int soTheVang, int soTheDo, int soLoi) {
-        this.doiBong = doiBong;
+    public TKTPDoiBong(int soTheVang, int soTheDo, int soLoi) {
         this.soTheVang = soTheVang;
         this.soTheDo = soTheDo;
         this.soLoi = soLoi;
-    }
-
-    public DoiBong getDoiBong() {
-        return doiBong;
-    }
-
-    public void setDoiBong(DoiBong doiBong) {
-        this.doiBong = doiBong;
     }
 
     public int getSoTheVang() {
@@ -52,7 +42,6 @@ public class TKTPDoiBong {
     @Override
     public String toString() {
         return "TKTPDoiBong{" +
-                "doiBong=" + doiBong +
                 ", soTheVang=" + soTheVang +
                 ", soTheDo=" + soTheDo +
                 ", soLoi=" + soLoi +
