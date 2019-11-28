@@ -1,15 +1,14 @@
 package vn.dangth.module.entity;
 
-public class TKTPDoiBong extends DoiBong implements Comparable<TKTPDoiBong> {
-
+public class TKTPDoiBongTheoTranDau extends TranDau {
     private int soTheVang;
     private int soTheDo;
     private int soLoi;
 
-    public TKTPDoiBong() {
+    public TKTPDoiBongTheoTranDau() {
     }
 
-    public TKTPDoiBong(int soTheVang, int soTheDo, int soLoi) {
+    public TKTPDoiBongTheoTranDau(int soTheVang, int soTheDo, int soLoi) {
         this.soTheVang = soTheVang;
         this.soTheDo = soTheDo;
         this.soLoi = soLoi;
@@ -41,23 +40,15 @@ public class TKTPDoiBong extends DoiBong implements Comparable<TKTPDoiBong> {
 
     @Override
     public String toString() {
-        return "TKTPDoiBong{" +
-                ", soTheVang=" + soTheVang +
+        return "TKTPDoiBongTheoTranDau{" +
+                "soTheVang=" + soTheVang +
                 ", soTheDo=" + soTheDo +
                 ", soLoi=" + soLoi +
+                ", id=" + id +
+                ", ngayDau=" + ngayDau +
+                ", doiNha=" + doiNha +
+                ", doiKhach=" + doiKhach +
+                ", san=" + san +
                 '}';
-    }
-
-    @Override
-    public int compareTo(TKTPDoiBong o) {
-        int result = Integer.compare(this.soTheDo, o.soTheDo);
-        if (result == 0) {
-            result = Integer.compare(this.soTheVang, o.soTheVang);
-        }
-        if (result == 0) {
-            result = Integer.compare(this.soLoi, o.soLoi);
-        }
-        if (result == 0) result = this.getTenDoiBong().compareTo(o.getTenDoiBong());
-        return result;
     }
 }

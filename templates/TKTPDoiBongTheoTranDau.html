@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thống kê thẻ phạt đội bóng</title>
+    <link rel="stylesheet" href="/lib/bootstrap-4.4.0-dist/css/bootstrap.min.css">
+    <style>
+        .loader {
+          border: 16px solid #f3f3f3; /* Light grey */
+          border-top: 16px solid #3498db; /* Blue */
+          border-radius: 50%;
+          width: 120px;
+          height: 120px;
+          animation: spin 2s linear infinite;
+          margin: 0 auto;
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="p-3">
+<div class="container">
+    <a class="btn btn-primary" href="/tktpdoibong" role="button">Trở lại</a>
+    <h1 class="text-center m-5">Thống kê thẻ phạt đội bóng </h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Mã trận</th>
+            <th scope="col">Đối thủ</th>
+            <th scope="col">Tổng thẻ đỏ</th>
+            <th scope="col">Tổng thẻ vàng</th>
+            <th scope="col">Tổng số lỗi</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <div class="loader"></div>
+</div>
+</body>
+<script src="/lib/jquery/jquery-3.3.1.slim.min.js"></script>
+<script src="/lib/jquery/popper.min.js"></script>
+<script src="/lib/bootstrap-4.4.0-dist/js/bootstrap.min.js"></script>
+<script>
+    var data = @{data};
+    var thisTeam = @{thisTeam};
+    $("h1").append(thisTeam.tenDoiBong)
+    for(i = 0; i< data.length; i++) {
+        console.log(data[i]);
+        var doiThu = '';
+        var doiNhaId = data[i].doiNha.id;
+        var doiKhachId = data[i].doiKhach.id;
+        if (doiNhaId !== thisTeam.id) doiThu = data[i].doiNha.tenDoiBong;
+        else doiThu = data[i].doiKhach.tenDoiBong;
+        $("tbody").append(
+        '<tr class="table-row">' +
+        '<th scope="row">'+data[i]['id']+'</th>' +
+        '<td>'+doiThu+'</td>' +
+        '<td>'+data[i]['soTheDo']+'</td>' +
+        '<td>'+data[i]['soTheVang']+'</td>' +
+        '<td>'+data[i]['soLoi']+'</td>')
+    }
+
+    $(".loader").hide();
+
+</script>
+</html>

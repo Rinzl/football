@@ -26,8 +26,7 @@ public class Loi {
     public Loi() {
     }
 
-    public Loi(int id, CauThu ctPhamLoi, CauThu ctPhamBiLoi, DoiBong doiBong, TranDau tranDau, int thoi_gian) {
-        this.id = id;
+    public Loi(CauThu ctPhamLoi, CauThu ctPhamBiLoi, DoiBong doiBong, TranDau tranDau, int thoi_gian) {
         this.ctPhamLoi = ctPhamLoi;
         this.ctPhamBiLoi = ctPhamBiLoi;
         this.doiBong = doiBong;

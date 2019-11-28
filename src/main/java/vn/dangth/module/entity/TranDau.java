@@ -10,18 +10,18 @@ public class TranDau {
     @Id
     @GeneratedValue
     @NotNull
-    private int id;
+    protected int id;
     @Column(name = "ngay_dau")
-    private java.sql.Date ngayDau;
+    protected java.sql.Date ngayDau;
     @ManyToOne
     @JoinColumn(name = "id_doi_nha")
-    private DoiBong doiNha;
+    protected DoiBong doiNha;
     @ManyToOne
     @JoinColumn(name = "id_doi_khach")
-    private DoiBong doiKhach;
+    protected DoiBong doiKhach;
     @ManyToOne
     @JoinColumn(name = "id_san")
-    private San san;
+    protected San san;
 
     public TranDau() {
     }

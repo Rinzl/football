@@ -33,9 +33,9 @@ jobs:
 
 jdbc:
   driver: com.mysql.cj.jdbc.Driver
-  url: jdbc:mysql://localhost:3306/football?useSSL=false
-  username: root
-  password: 12345678
+  url: jdbc:mysql://192.168.29.49:3306/football?useSSL=false&&allowPublicKeyRetrieval=true
+  username: dangth
+  password: 20011997
   port: 3306
   options: logger=Slf4JLogger
 
