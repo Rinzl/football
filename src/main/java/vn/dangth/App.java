@@ -18,7 +18,7 @@ public class App {
         On.get("/tktpdoibong").view("TKTPDoiBong").mvc("OK");
         On.get("/tktpdoibong/team/{id}").view("TKTPDoiBongTheoTranDau").mvc((Integer id) -> {
             DoiBong doiBong = DoiBongDAO.getDoiBongById(id);
-        return U.map("data", JSON.MAPPER.writeValueAsString(TKTPDoiBongTheoTranDauDAO.thongKe(doiBong)), "thisTeam", JSON.MAPPER.writeValueAsString(doiBong));
+            return U.map("data", JSON.MAPPER.writeValueAsString(TKTPDoiBongTheoTranDauDAO.thongKe(doiBong)), "thisTeam", JSON.MAPPER.writeValueAsString(doiBong));
         });
     }
 }
