@@ -19,13 +19,13 @@ begin
 		inner join tbl_doi_bong doi_khach
 		on tbl_tran_dau.id_doi_khach = doi_khach.id and (tbl_tran_dau.id_doi_nha = id_doi_bong or tbl_tran_dau.id_doi_khach = id_doi_bong)
 		left join (
-			select id_tran_dau, count(*) as so_the_do from tbl_the_do where id_doi_bong = id_doi_bong group by tbl_the_do.id_tran_dau
+			select id_tran_dau, count(*) as so_the_do from tbl_the_do where tbl_the_do.id_doi_bong = id_doi_bong group by tbl_the_do.id_tran_dau
 		) as join_the_do on tbl_tran_dau.id = join_the_do.id_tran_dau
 		left join (
-			select id_tran_dau, count(*) as so_the_vang from tbl_the_vang where id_doi_bong = id_doi_bong group by tbl_the_vang.id_tran_dau
+			select id_tran_dau, count(*) as so_the_vang from tbl_the_vang where tbl_the_vang.id_doi_bong = id_doi_bong group by tbl_the_vang.id_tran_dau
 		) as join_the_vang on tbl_tran_dau.id = join_the_vang.id_tran_dau
 		left join (
-			select id_tran_dau, count(*) as so_loi from tbl_loi where id_doi_bong = id_doi_bong group by tbl_loi.id_tran_dau
+			select id_tran_dau, count(*) as so_loi from tbl_loi where tbl_loi.id_doi_bong = id_doi_bong group by tbl_loi.id_tran_dau
 		) as join_loi on tbl_tran_dau.id = join_loi.id_tran_dau;
 END $$
 DELIMITER ;
