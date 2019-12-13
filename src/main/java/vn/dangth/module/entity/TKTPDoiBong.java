@@ -1,5 +1,15 @@
 package vn.dangth.module.entity;
 
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "thongKeThePhatDoiBong",
+                query = "CALL thongKeThePhatDoiBong()",
+                resultClass = TKTPDoiBong.class
+        )
+})
 public class TKTPDoiBong extends DoiBong implements Comparable<TKTPDoiBong> {
 
     private int soTheVang;
@@ -42,7 +52,7 @@ public class TKTPDoiBong extends DoiBong implements Comparable<TKTPDoiBong> {
     @Override
     public String toString() {
         return "TKTPDoiBong{" +
-                ", soTheVang=" + soTheVang +
+                "soTheVang=" + soTheVang +
                 ", soTheDo=" + soTheDo +
                 ", soLoi=" + soLoi +
                 '}';
