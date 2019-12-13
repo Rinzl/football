@@ -3,6 +3,7 @@ package vn.dangth;
 import org.rapidoid.jpa.JPA;
 import org.rapidoid.setup.App;
 import vn.dangth.module.dao.TranDauDAO;
+import vn.dangth.module.entity.DoiBong;
 import vn.dangth.module.entity.Loi;
 import vn.dangth.module.entity.TranDau;
 
@@ -21,6 +22,7 @@ public class DataPreparation {
 //        insertLoi(connection, matchList);
 //        insertRed(connection, matchList);
 //        insertYellow(connection, matchList);
+//        insertDangKi(connection, matchList);
     }
 
     static void insertLoi(Connection connection, List<TranDau> matchList) throws SQLException {
@@ -84,6 +86,34 @@ public class DataPreparation {
             }
         }
         System.out.println("DONE.");
+        System.exit(0);
+    }
+
+    static void insertDangKi(Connection connection, List<TranDau> matchList) throws SQLException {
+        Random rd = new Random();
+        PreparedStatement p = connection.prepareStatement("INSERT INTO football.tbl_dang_ki_ct_tran_dau (id_cau_thu, id_doi_bong, id_tran_dau) VALUES (?,?,?)");
+        for (TranDau tranDau : matchList) {
+            System.out.println(tranDau.getId());
+            // doi nha
+            DoiBong doiNha = tranDau.getDoiNha();
+            for (int i = 0; i < 11; i++) {
+                p.setInt(1, rd.nextInt(460)+1);
+                p.setInt(2, doiNha.getId());
+                p.setInt(3, tranDau.getId());
+                p.executeUpdate();
+            }
+
+            // doi nha
+            DoiBong doiKhach = tranDau.getDoiKhach();
+            for (int i = 0; i < 11; i++) {
+                p.setInt(1, rd.nextInt(460)+1);
+                p.setInt(2, doiKhach.getId());
+                p.setInt(3, tranDau.getId());
+                p.executeUpdate();
+            }
+        }
+
+        System.out.println("DONE");
         System.exit(0);
     }
 }
