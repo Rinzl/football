@@ -26,6 +26,7 @@ begin
 		) as join_the_vang on tbl_tran_dau.id = join_the_vang.id_tran_dau
 		left join (
 			select id_tran_dau, count(*) as so_loi from tbl_loi where tbl_loi.id_doi_bong = id_doi_bong group by tbl_loi.id_tran_dau
-		) as join_loi on tbl_tran_dau.id = join_loi.id_tran_dau;
+		) as join_loi on tbl_tran_dau.id = join_loi.id_tran_dau
+		order by ma_tran;
 END $$
 DELIMITER ;
