@@ -20,6 +20,10 @@ public class DoiBong {
     public DoiBong() {
     }
 
+    public DoiBong(String tenDoiBong) {
+        this.tenDoiBong = tenDoiBong;
+    }
+
     public DoiBong(int id, String tenDoiBong, String diaChi, String tptt, San san) {
         this.id = id;
         this.tenDoiBong = tenDoiBong;

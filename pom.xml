@@ -30,11 +30,29 @@
       <artifactId>rapidoid-quick</artifactId>
       <version>5.5.5</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.rapidoid/rapidoid-test-commons -->
+    <dependency>
+      <groupId>org.rapidoid</groupId>
+      <artifactId>rapidoid-test-commons</artifactId>
+      <version>5.5.5</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.essentials4j</groupId>
+      <artifactId>essentials4j</artifactId>
+      <version>1.0.0</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.18</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>RELEASE</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
